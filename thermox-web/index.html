@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermox</title>
+    <link rel="shortcut icon" href="./assets/logo_thermox.png" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #003c94;
+            background-size: 30%;
+            background-repeat: repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            background-size: 20%;
+            background-repeat: repeat;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            width: 25%;
+            max-width: 300px;
+        }
+
+        .container h1 {
+            font-family: 'Gloock', serif;
+            font-size: 65px;
+            margin-bottom: 10px;
+            color: #003c94;
+        }
+
+        .container p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #003c94;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+
+        .container h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #003c94;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+
+        .features {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        .feature-item {
+            text-align: center;
+            width: 33%;
+            background-color: #ffffff;
+            border-radius: 20px;
+            color: #555555;
+            padding: 20px;
+            font-family: 'Segoe UI light', Tahoma, Geneva, Verdana, sans-serif;
+            transition: 1s all;
+            box-shadow: 10px 10px 10px gray;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05)
+        }
+
+        .feature-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 5px;
+            margin: auto;
+        }
+
+        .feature-item h3 {
+            font-size: 30px;
+            color: #003c94;
+            text-align: justify;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .container a {
+            color: #003c94;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .button-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .social-section {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .container-x {
+            background-color: #003c94;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-shadow: 15px 15px 15px gray;
+        }
+
+        .social-section img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+        }
+    </style>
+</head>
+
+<body class="font-medium py-8">
+    <div class="container">
+        <h1>THERMOX</h1>
+        <p>¡Controla la calidad del aire y mejora tu ambiente!</p>
+        <i>
+            <h2>Sobre el producto</h2>
+        </i>
+        <p>Thermox mejora la calidad de los ambientes y recomienda qué se debería hacer dependiendo de la temperatura.
+        </p>
+
+        <section class="features pt-8">
+            <div class="feature-item w-full flex flex-col items-center justify-center gap-2">
+                <img src="./assets/3.png">
+                <strong>
+                    <h3>Temperatura</h3>
+                </strong>
+                <p>Monitorea y ajusta la temperatura para mantener un ambiente óptimo.</p>
+            </div>
+            <div class="feature-item w-full flex flex-col items-center justify-center gap-2">
+                <img src="./assets/2.png">
+                <strong>
+                    <h3>Oxígeno</h3>
+                </strong>
+                <p>Detecta niveles de oxígeno y te avisa cuando ventilar.</p>
+            </div>
+            <div class="feature-item w-full flex flex-col items-center justify-center gap-2">
+                <img src="./assets/1.png">
+                <strong>
+                    <h3>CO₂</h3>
+                </strong>
+                <p>Mide el dióxido de carbono en el aire y sugiere acciones correctivas.</p>
+            </div>
+        </section>
+        <div class="w-full flex flex-col items-center justify-center">
+
+
+            <div class="w-[50rem] h-[50rem] aspect-square flex items-center justify-center">
+                <canvas id="canvas3d" className='w-full h-full aspect-square'></canvas>
+            </div>
+
+            <div class="w-[50rem] h-[50rem] aspect-square flex items-center justify-center">
+                <img src="./assets/renderfrente.png" className='w-full h-full aspect-square'></img>
+            </div>
+            <div class="w-[50rem] h-[50rem] aspect-square flex items-center justify-center">
+                <img src="./assets/cajarender.2.png" className='w-full h-full aspect-square'></img>
+            </div>
+            <div class="w-[50rem] h-[50rem] aspect-square flex items-center justify-center">
+                <img src="./assets/caja_con_ventilador.png" className='w-full h-full aspect-square'></img>
+            </div>
+
+        </div>
+
+        <br><br>
+        <div class="w-full flex items-center justify-center">
+            <button class="w-auto container-x font-bold px-8 hover:bg-blue-900">Comprar producto</button>
+        </div>
+        <br><br><br>
+        <div class="social-section">
+            <img src="./assets/ig.png" alt="Instagram">
+            <a href="./assets/igp.jpg">
+                <strong> <button>Instagram</button> </strong>
+            </a>
+            <img src="./assets/tf.png" alt="Teléfono">
+            <a href="">
+                <strong> <button>4893-5623</button> </strong>
+            </a>
+            <img src="./assets/gm.png" alt="Email">
+            <a href="">
+                <strong> <button>thermox24@gmail.com</button> </strong>
+            </a>
+        </div>
+    </div>
+    <script src="./assets/spline.js" type='module'></script>
+</body>
+
+</html>
